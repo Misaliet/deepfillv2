@@ -132,6 +132,8 @@ def WGAN_trainer(opt):
             GAN_Loss = - torch.mean(fake_scalar)
 
             # Get the deep semantic feature maps, and compute Perceptual Loss
+            if hasattr(torch.cuda, 'empty_cache'):
+	            torch.cuda.empty_cache()
             img_featuremaps = perceptualnet(img)                            # feature maps
             second_out_wholeimg_featuremaps = perceptualnet(second_out_wholeimg)
             second_PerceptualLoss = L1Loss(second_out_wholeimg_featuremaps, img_featuremaps)
