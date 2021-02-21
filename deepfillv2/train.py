@@ -41,7 +41,7 @@ if __name__ == "__main__":
     parser.add_argument('--init_gain', type = float, default = 0.02, help = 'the initialization gain')
     # Dataset parameters
     parser.add_argument('--baseroot', type = str, default = "../../MSPADE/datasets/sz3/realScene/training", help = 'the training folder')
-    parser.add_argument('--mask_type', type = str, default = 'free_form', help = 'mask type')
+    parser.add_argument('--mask_type', type = str, default = 'bbox', help = 'mask type')
     parser.add_argument('--imgsize', type = int, default = 256, help = 'size of image')
     parser.add_argument('--margin', type = int, default = 10, help = 'margin of image')
     parser.add_argument('--mask_num', type = int, default = 15, help = 'number of mask')
