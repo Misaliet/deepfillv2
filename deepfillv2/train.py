@@ -45,7 +45,7 @@ if __name__ == "__main__":
     parser.add_argument('--imgsize', type = int, default = 256, help = 'size of image')
     parser.add_argument('--margin', type = int, default = 10, help = 'margin of image')
     parser.add_argument('--mask_num', type = int, default = 15, help = 'number of mask')
-    parser.add_argument('--bbox_shape', type = int, default = 30, help = 'margin of image for bbox mask')
+    parser.add_argument('--bbox_shape', type = int, default = 100, help = 'margin of image for bbox mask')
     parser.add_argument('--max_angle', type = int, default = 4, help = 'parameter of angle for free form mask')
     parser.add_argument('--max_len', type = int, default = 40, help = 'parameter of length for free form mask')
     parser.add_argument('--max_width', type = int, default = 10, help = 'parameter of width for free form mask')
