@@ -83,6 +83,8 @@ def get_files(path):
     ret = []
     for root, dirs, files in os.walk(path):
         for filespath in files:
+            if filespath == ".DS_Store":
+                print("!!!!!!!!!")
             ret.append(os.path.join(root, filespath))
     return ret
 
