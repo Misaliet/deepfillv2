@@ -8,6 +8,7 @@ if __name__ == "__main__":
     # ----------------------------------------
     parser = argparse.ArgumentParser()
     # General parameters
+    parser.add_argument('--name', type = str, default = 'test', help = 'experiment name')
     parser.add_argument('--save_path', type = str, default = './models', help = 'saving path that is a folder')
     parser.add_argument('--sample_path', type = str, default = './samples', help = 'training samples path that is a folder')
     parser.add_argument('--gan_type', type = str, default = 'WGAN', help = 'the type of GAN for training')
