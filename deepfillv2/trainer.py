@@ -64,7 +64,7 @@ def WGAN_trainer(opt):
     def save_model(net, epoch, opt):
         """Save the model at "checkpoint_interval" and its multiple"""
         model_name = 'deepfillv2_LSGAN_epoch%d_batchsize%d.pth' % (epoch, opt.batch_size)
-        model_name = os.path.join(save_folder, model_name)
+        model_name = os.path.join(os.path.join(save_folder, opt.name), model_name)
         if opt.multi_gpu == True:
             if epoch % opt.checkpoint_interval == 0:
                 torch.save(net.module.state_dict(), model_name)
@@ -169,7 +169,7 @@ def WGAN_trainer(opt):
         if (epoch + 1) % 1 == 0:
             img_list = [img, mask, masked_img, first_out, second_out]
             name_list = ['gt', 'mask', 'masked_img', 'first_out', 'second_out']
-            utils.save_sample_png(sample_folder = sample_folder, sample_name = 'epoch%d' % (epoch + 1), img_list = img_list, name_list = name_list, pixel_max_cnt = 255)
+            utils.save_sample_png(sample_folder = os.path.join(sample_folder, opt.name), sample_name = 'epoch%d' % (epoch + 1), img_list = img_list, name_list = name_list, pixel_max_cnt = 255)
 
 def LSGAN_trainer(opt):
     # ----------------------------------------
