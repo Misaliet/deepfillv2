@@ -114,7 +114,8 @@ def check_path(path):
 # ----------------------------------------
 def save_sample_png(sample_folder, sample_name, img_list, name_list, pixel_max_cnt = 255):
     # Save image one-by-one
-    print(sample_folder)
+    if not os.path.exists(sample_folder):
+        os.makedirs(sample_folder)
     for i in range(len(img_list)):
         img = img_list[i]
         # Recover normalization: * 255 because last layer is sigmoid activated
